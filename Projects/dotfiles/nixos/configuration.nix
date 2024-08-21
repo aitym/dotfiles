@@ -92,13 +92,24 @@
     ];
   };
 
-  home-manager.users.aitym = { pkgs, ... }: {
-    home.packages = [ pkgs.atool pkgs.httpie ];
-    programs.bash.enable = true;
+  home-manager = {
+    useGlobalPkgs = true;
+    users.aitym = { pkgs, ... }: {
+      home.packages = [ pkgs.atool pkgs.httpie ];
+      programs.bash = {
+        enable = true;
+        bashrcExtra = ''
+          alias config='/run/current-system/sw/bin/git --git-dir=$HOME/dotfiles/ --work-tree=$HOME'
+          /run/current-system/sw/bin/git --git-dir=$HOME/dotfiles/ --work-tree=$HOME config status.showUntrackedFiles no
+          eval "$(ssh-agent -s)"
+          ssh-add ~/.ssh/personal_key
+        '';
+      };
 
-    # The state version is required and should stay at the version you
-    # originally installed.
-    home.stateVersion = "24.05";
+      # The state version is required and should stay at the version you
+      # originally installed.
+      home.stateVersion = "24.05";
+    };
   };
 
   # Install firefox.
@@ -135,12 +146,12 @@
   # Or disable the firewall altogether.
   # networking.firewall.enable = false;
 
-  environment.interactiveShellInit = ''
-    alias config='/run/current-system/sw/bin/git --git-dir=$HOME/dotfiles/ --work-tree=$HOME'
-    /run/current-system/sw/bin/git --git-dir=$HOME/dotfiles/ --work-tree=$HOME config status.showUntrackedFiles no
-    eval "$(ssh-agent -s)"
-    ssh-add ~/.ssh/personal_key
-  '';
+  # environment.interactiveShellInit = ''
+  #   alias config='/run/current-system/sw/bin/git --git-dir=$HOME/dotfiles/ --work-tree=$HOME'
+  #   /run/current-system/sw/bin/git --git-dir=$HOME/dotfiles/ --work-tree=$HOME config status.showUntrackedFiles no
+  #   eval "$(ssh-agent -s)"
+  #   ssh-add ~/.ssh/personal_key
+  # '';
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
