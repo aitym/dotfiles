@@ -1,1 +1,1 @@
-sudo nixos-rebuild switch --flake $HOME/nixos#laptop
+sudo nixos-rebuild switch --flake $HOME/Projects/dotfiles/nixos#laptop --impure
