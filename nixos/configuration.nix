@@ -102,6 +102,7 @@
   environment.systemPackages = with pkgs; [
     neovim
     git
+    vscode
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
@@ -126,6 +127,8 @@
   environment.interactiveShellInit = ''
     alias config='/run/current-system/sw/bin/git --git-dir=$HOME/dotfiles/ --work-tree=$HOME'
     /run/current-system/sw/bin/git --git-dir=$HOME/dotfiles/ --work-tree=$HOME config status.showUntrackedFiles no
+    eval "$(ssh-agent -s)"
+    ssh-add ~/.ssh/personal_key
   '';
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
