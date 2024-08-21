@@ -69,7 +69,6 @@
   environment.systemPackages = with pkgs; [
     neovim
     git
-    vscode
     ungoogled-chromium
   ];
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
