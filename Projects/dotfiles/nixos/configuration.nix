@@ -73,6 +73,7 @@
     jetbrains.phpstorm
     php83
     php83Packages.composer
+    (callPackage ./packages/symfony-cli.nix {})
   ];
   virtualisation.docker.enable = true;
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
