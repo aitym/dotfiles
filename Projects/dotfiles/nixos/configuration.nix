@@ -42,7 +42,7 @@
   users.users.aitym = {
     isNormalUser = true;
     description = "Aitym";
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = [ "networkmanager" "wheel" "docker" ];
     packages = with pkgs; [
       kdePackages.kate
     ];
@@ -72,6 +72,7 @@
     ungoogled-chromium
     jetbrains.phpstorm
   ];
+  virtualisation.docker.enable = true;
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
   system.stateVersion = "24.05";
 }
