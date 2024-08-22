@@ -2,11 +2,11 @@
 
 stdenv.mkDerivation rec {
   pname = "symfony-cli";
-  version = "4.23.5";
+  version = "4.28.1";
 
   src = fetchurl {
     url = "https://github.com/symfony/cli/releases/download/v${version}/symfony_linux_amd64";
-    sha256 = "43aef5fd5d45f4602697cad016eff504cb68ec6ad1271c7b1e2a089e1eedd05a";
+    sha256 = "66c2daf21e3acbdda8d826a0484b02e59255401d54027cdbe2605406f77933a8";
   };
 
   phases = [ "installPhase" ];
