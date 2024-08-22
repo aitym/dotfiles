@@ -71,7 +71,12 @@
     git
     ungoogled-chromium
     jetbrains.phpstorm
-    php83
+    (pkgs.php83.buildEnv {
+      extensions = { all, enabled }: with all; enabled ++ [ xdebug ];
+      extraConfig = ''
+        short_open_tag=off
+      '';
+    })
     php83Packages.composer
     (callPackage ./packages/symfony-cli.nix {})
   ];
