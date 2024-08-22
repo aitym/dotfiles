@@ -72,6 +72,7 @@
     ungoogled-chromium
     jetbrains.phpstorm
     php83
+    php83Packages.composer
   ];
   virtualisation.docker.enable = true;
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
