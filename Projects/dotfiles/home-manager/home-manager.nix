@@ -1,7 +1,13 @@
+{ pkgs, ... }:
 {
+  imports = [
+    <home-manager/nixos>
+  ];
   home-manager.useGlobalPkgs = true;
   home-manager.useUserPackages = true;
   home-manager.users.aitym = {
+    home.packages = [ pkgs.atool pkgs.httpie ];
+    home.stateVersion = "24.05";
     programs.bash = {
       enable = true;
       bashrcExtra = ''
