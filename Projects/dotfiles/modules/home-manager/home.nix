@@ -1,6 +1,4 @@
-{ pkgs, ... }:
 {
-  home.packages = [ pkgs.atool pkgs.httpie ];
   programs.bash = {
     enable = true;
     bashrcExtra = ''
@@ -11,5 +9,4 @@
       ssh-add ~/.ssh/personal_key
     '';
   };
-  home.stateVersion = "24.05";
 }
