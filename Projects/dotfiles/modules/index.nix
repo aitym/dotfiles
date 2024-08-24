@@ -1,0 +1,70 @@
+{ config, pkgs, ... }:
+let
+  php83 = pkgs.php83.buildEnv {
+    extensions = { enabled, all }: enabled ++ (with all; [ xdebug ]);
+    extraConfig = ''
+      short_open_tag=off
+    '';
+  };
+in {
+  imports = [
+    ./hardware-configuration.nix
+  ];
+  boot.loader.systemd-boot.enable = true;
+  boot.loader.efi.canTouchEfiVariables = true;
+  networking.hostName = "nixos";
+  networking.networkmanager.enable = true;
+  time.timeZone = "Asia/Aqtobe";
+  i18n.defaultLocale = "en_US.UTF-8";
+  i18n.extraLocaleSettings = {
+    LC_ADDRESS = "en_US.UTF-8";
+    LC_IDENTIFICATION = "en_US.UTF-8";
+    LC_MEASUREMENT = "en_US.UTF-8";
+    LC_MONETARY = "en_US.UTF-8";
+    LC_NAME = "en_US.UTF-8";
+    LC_NUMERIC = "en_US.UTF-8";
+    LC_PAPER = "en_US.UTF-8";
+    LC_TELEPHONE = "en_US.UTF-8";
+    LC_TIME = "en_US.UTF-8";
+  };
+  services.xserver.enable = true;
+  services.displayManager.sddm.enable = true;
+  services.desktopManager.plasma6.enable = true;
+  services.xserver = {
+    xkb = {
+      layout = "us";
+      variant = "";
+    };
+  };
+  services.printing.enable = true;
+  hardware.pulseaudio.enable = false;
+  security.rtkit.enable = true;
+  services.pipewire = {
+    enable = true;
+    alsa.enable = true;
+    alsa.support32Bit = true;
+    pulse.enable = true;
+  };
+  users.users.aitym = {
+    isNormalUser = true;
+    description = "Aitym";
+    extraGroups = [ "networkmanager" "wheel" "docker" ];
+    packages = with pkgs; [
+      kdePackages.kate
+    ];
+  };
+  programs.firefox.enable = true;
+  nixpkgs.config.allowUnfree = true;
+  environment.systemPackages = with pkgs; [
+    neovim
+    git
+    ungoogled-chromium
+    jetbrains.phpstorm
+    php83
+    php83Packages.composer
+    (callPackage ./packages/symfony-cli.nix {})
+  ];
+  virtualisation.docker.enable = true;
+  nix.settings.experimental-features = [ "nix-command" "flakes" ];
+  system.stateVersion = "24.05";
+}
