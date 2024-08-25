@@ -21,9 +21,10 @@
           inherit inputs system;
         };
         modules = [
-          ./modules/locale.nix
           ./modules/bootloader.nix
           ./modules/filesystem.nix
+          ./modules/locale.nix
+          ./modules/time.nix
           ./modules/network.nix
           ./modules/bluetooth.nix
           ./modules/system.nix
