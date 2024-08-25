@@ -16,7 +16,6 @@
   nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
   hardware.cpu.intel.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
   time.timeZone = "Asia/Aqtobe";
-  services.printing.enable = true;
   security.rtkit.enable = true;
   programs.firefox.enable = true;
   nixpkgs.config.allowUnfree = true;
