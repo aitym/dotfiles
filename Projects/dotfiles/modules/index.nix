@@ -1,12 +1,5 @@
 { config, pkgs, ... }:
-let
-  php83 = pkgs.php83.buildEnv {
-    extensions = { enabled, all }: enabled ++ (with all; [ xdebug ]);
-    extraConfig = ''
-      short_open_tag=off
-    '';
-  };
-in {
+{
   imports = [
     ./hardware-configuration.nix
   ];
@@ -59,10 +52,6 @@ in {
     neovim
     git
     ungoogled-chromium
-    jetbrains.phpstorm
-    php83
-    php83Packages.composer
-    (callPackage ./packages/symfony-cli.nix {})
   ];
   virtualisation.docker.enable = true;
   nix.settings.experimental-features = [ "nix-command" "flakes" ];

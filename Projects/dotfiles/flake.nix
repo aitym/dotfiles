@@ -22,6 +22,7 @@
         };
         modules = [
           ./modules/index.nix
+          ./modules/php.nix
           inputs.nixvim.nixosModules.nixvim
           ./home-manager/home-manager.nix
         ];
