@@ -32,7 +32,6 @@
 	      ./modules/xserver.nix
 	      ./modules/sound.nix
 	      ./modules/development.nix
-          ./modules/php.nix
           inputs.nixvim.nixosModules.nixvim
           ./home-manager/home-manager.nix
         ];
