@@ -22,6 +22,7 @@
         };
         modules = [
           ./modules/locale.nix
+          ./modules/bootloader.nix
           ./modules/system.nix
 	      ./modules/xserver.nix
 	      ./modules/sound.nix

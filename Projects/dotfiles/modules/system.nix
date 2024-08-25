@@ -3,10 +3,6 @@
   imports = [
     (modulesPath + "/installer/scan/not-detected.nix")
   ];
-  boot.initrd.availableKernelModules = [ "xhci_pci" "thunderbolt" "nvme" "usb_storage" "sd_mod" "rtsx_pci_sdmmc" ];
-  boot.initrd.kernelModules = [ ];
-  boot.kernelModules = [ "kvm-intel" ];
-  boot.extraModulePackages = [ ];
   fileSystems."/" = {
     device = "/dev/disk/by-uuid/44c3685b-750c-4a0a-8a33-d3efcf4c90ff";
     fsType = "ext4";
@@ -27,8 +23,6 @@
   };
   nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
   hardware.cpu.intel.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
-  boot.loader.systemd-boot.enable = true;
-  boot.loader.efi.canTouchEfiVariables = true;
   networking.hostName = "laptop";
   networking.networkmanager.enable = true;
   time.timeZone = "Asia/Aqtobe";
