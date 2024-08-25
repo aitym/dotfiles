@@ -23,6 +23,7 @@
         modules = [
           ./modules/hardware.nix
           ./modules/index.nix
+	  ./modules/xserver.nix
           ./modules/php.nix
           inputs.nixvim.nixosModules.nixvim
           ./home-manager/home-manager.nix

@@ -17,15 +17,6 @@
     LC_TELEPHONE = "en_US.UTF-8";
     LC_TIME = "en_US.UTF-8";
   };
-  services.xserver.enable = true;
-  services.displayManager.sddm.enable = true;
-  services.desktopManager.plasma6.enable = true;
-  services.xserver = {
-    xkb = {
-      layout = "us";
-      variant = "";
-    };
-  };
   services.printing.enable = true;
   hardware.pulseaudio.enable = false;
   security.rtkit.enable = true;
@@ -39,9 +30,6 @@
     isNormalUser = true;
     description = "Aitym";
     extraGroups = [ "networkmanager" "wheel" "docker" ];
-    packages = with pkgs; [
-      kdePackages.kate
-    ];
   };
   programs.firefox.enable = true;
   nixpkgs.config.allowUnfree = true;
