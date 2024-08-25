@@ -22,8 +22,7 @@
         };
         modules = [
           ./modules/locale.nix
-          ./modules/hardware.nix
-          ./modules/index.nix
+          ./modules/system.nix
 	      ./modules/xserver.nix
 	      ./modules/sound.nix
           ./modules/php.nix
