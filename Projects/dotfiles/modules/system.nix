@@ -13,11 +13,8 @@
     options = [ "fmask=0022" "dmask=0022" ];
   };
   swapDevices = [];
-  networking.useDHCP = lib.mkDefault true;
   nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
   hardware.cpu.intel.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
-  networking.hostName = "laptop";
-  networking.networkmanager.enable = true;
   time.timeZone = "Asia/Aqtobe";
   services.printing.enable = true;
   security.rtkit.enable = true;
