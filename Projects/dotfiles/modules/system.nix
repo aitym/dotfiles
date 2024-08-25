@@ -17,7 +17,6 @@
   hardware.cpu.intel.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
   time.timeZone = "Asia/Aqtobe";
   security.rtkit.enable = true;
-  programs.firefox.enable = true;
   nixpkgs.config.allowUnfree = true;
   environment.systemPackages = with pkgs; [
     ungoogled-chromium
