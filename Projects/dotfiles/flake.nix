@@ -23,6 +23,7 @@
         modules = [
           ./modules/locale.nix
           ./modules/bootloader.nix
+          ./modules/bluetooth.nix
           ./modules/system.nix
 	      ./modules/xserver.nix
 	      ./modules/sound.nix
