@@ -2,7 +2,7 @@
 {
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
-  networking.hostName = "nixos";
+  networking.hostName = "laptop";
   networking.networkmanager.enable = true;
   time.timeZone = "Asia/Aqtobe";
   i18n.defaultLocale = "en_US.UTF-8";
