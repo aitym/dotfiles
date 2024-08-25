@@ -21,11 +21,6 @@
   time.timeZone = "Asia/Aqtobe";
   services.printing.enable = true;
   security.rtkit.enable = true;
-  users.users.aitym = {
-    isNormalUser = true;
-    description = "Aitym";
-    extraGroups = [ "networkmanager" "wheel" "docker" ];
-  };
   programs.firefox.enable = true;
   nixpkgs.config.allowUnfree = true;
   environment.systemPackages = with pkgs; [

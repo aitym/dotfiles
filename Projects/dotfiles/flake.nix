@@ -25,6 +25,7 @@
           ./modules/bootloader.nix
           ./modules/bluetooth.nix
           ./modules/system.nix
+          ./modules/user.nix
 	      ./modules/xserver.nix
 	      ./modules/sound.nix
           ./modules/php.nix
