@@ -21,6 +21,7 @@
           inherit inputs system;
         };
         modules = [
+          ./modules/locale.nix
           ./modules/hardware.nix
           ./modules/index.nix
 	      ./modules/xserver.nix
