@@ -6,10 +6,6 @@
   nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
   hardware.cpu.intel.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
   nixpkgs.config.allowUnfree = true;
-  environment.systemPackages = with pkgs; [
-    ungoogled-chromium
-    htop
-  ];
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
   system.stateVersion = "24.05";
 }

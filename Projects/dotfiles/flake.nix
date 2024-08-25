@@ -31,6 +31,7 @@
           ./modules/user.nix
 	      ./modules/xserver.nix
 	      ./modules/sound.nix
+	      ./modules/packages.nix
 	      ./modules/development.nix
           inputs.nixvim.nixosModules.nixvim
           ./home-manager/home-manager.nix
