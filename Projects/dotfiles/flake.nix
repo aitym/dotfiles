@@ -21,6 +21,7 @@
           inherit inputs system;
         };
         modules = [
+          ./modules/hardware.nix
           ./modules/index.nix
           ./modules/php.nix
           inputs.nixvim.nixosModules.nixvim
