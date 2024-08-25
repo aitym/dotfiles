@@ -21,12 +21,9 @@
   programs.firefox.enable = true;
   nixpkgs.config.allowUnfree = true;
   environment.systemPackages = with pkgs; [
-    neovim
-    git
     ungoogled-chromium
     htop
   ];
-  virtualisation.docker.enable = true;
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
   system.stateVersion = "24.05";
 }
