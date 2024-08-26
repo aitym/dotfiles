@@ -23,6 +23,7 @@
         modules = [
           ./modules/bootloader.nix
           ./modules/filesystem.nix
+          ./modules/cpu.nix
           ./modules/locale.nix
           ./modules/time.nix
           ./modules/network.nix
