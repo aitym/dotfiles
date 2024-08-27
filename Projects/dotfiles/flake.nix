@@ -24,6 +24,7 @@
           ./modules/bootloader.nix
           ./modules/filesystem.nix
           ./modules/cpu.nix
+          ./modules/not-detected.nix
           ./modules/locale.nix
           ./modules/time.nix
           ./modules/network.nix
