@@ -103,7 +103,7 @@
     home = "/home/wipon";
     description = "Aitym (Wipon Groups)";
     group = "users";
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = [ "networkmanager" "wheel" "docker" ];
   };
   users.users.aitym = {
     uid = 1001;
@@ -111,7 +111,7 @@
     home = "/home/aitym";
     description = "Aitym (Personal)";
     group = "users";
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = [ "networkmanager" "wheel" "docker" ];
   };
   home-manager.useUserPackages = true;
   home-manager.useGlobalPkgs = true;
@@ -179,6 +179,8 @@
 
   # Enable the OpenSSH daemon.
   # services.openssh.enable = true;
+
+  virtualisation.docker.enable = true;
 
   # Open ports in the firewall.
   # networking.firewall.allowedTCPPorts = [ ... ];
