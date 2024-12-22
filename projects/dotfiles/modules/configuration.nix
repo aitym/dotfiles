@@ -151,6 +151,8 @@
     telegram-desktop
     discord
     postman
+    xclip
+    xsel
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
