@@ -150,6 +150,7 @@
     chromium
     telegram-desktop
     discord
+    postman
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
