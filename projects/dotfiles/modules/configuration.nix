@@ -16,6 +16,17 @@
   boot.loader.efi.canTouchEfiVariables = true;
 
   networking.hostName = "nixos"; # Define your hostname.
+
+  networking.extraHosts =
+  ''
+    127.0.0.1	admin.local
+    127.0.0.1	api.local
+    127.0.0.1	app.local
+    127.0.0.1	nurkassa.local
+    127.0.0.1	api.wiponkassa.local
+    127.0.0.1	app.wiponkassa.local
+  '';
+
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
   # Configure network proxy if necessary
