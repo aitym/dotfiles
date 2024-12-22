@@ -165,6 +165,8 @@
     xclip
     xsel
     ripgrep
+    unzip
+    jetbrains-toolbox
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
