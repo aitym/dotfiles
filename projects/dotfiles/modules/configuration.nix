@@ -83,11 +83,14 @@
   users.groups.users = lib.mkForce {
     gid = 1000;
   };
+  users.users.root = {
+    isNormalUser = false;
+  };
   users.users.wipon = {
     uid = 1000;
     isNormalUser = true;
     home = "/home/wipon";
-    description = "Wipon Groups";
+    description = "Aitym (Wipon Groups)";
     group = "users";
     extraGroups = [ "networkmanager" "wheel" ];
   };
@@ -95,7 +98,7 @@
     uid = 1001;
     isNormalUser = true;
     home = "/home/aitym";
-    description = "Aitym Ramazanov";
+    description = "Aitym (Personal)";
     group = "users";
     extraGroups = [ "networkmanager" "wheel" ];
   };
